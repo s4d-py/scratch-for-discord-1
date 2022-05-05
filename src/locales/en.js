@@ -41,9 +41,9 @@ export const websiteMessages = {
         }
     },
     file: {
-        copy:"Copy Javascript Code",
+        copy:"Copy Python Code",
         title: "File",
-        javascript: "Export to Javascript",
+        javascript: "Export to Python",
         open: "Open a file...",
       confirm: {
             title: "Delete current blocks?",
@@ -81,28 +81,14 @@ export const websiteMessages = {
             no: "No",
         },
         loaded: "Successfully imported the {example} example!",
-        ping_pong: "Ping-Pong Command",
-	random:"Random Response",
-        command_parsing: "Commands Handler",
-      bettercmd: "Better Command Handler", 
-        leveling: "Leveling System",
-        button: "Button and Button Row",
-	image_gen: "Image Generation",
-        imgedit: "(JIMP) Image Editing Example",
-	economy: "Economy",
-	aki:"Akinator",
-        music: "Music System",
-	backup:"Backup",
-      reddit:"Reddit",
-      ticket:"Ticket",
-      cooldown: "Cooldown",
+        ping_pong: "Ping-Pong Command"
     },
     download: {
         title: "Download your bot?",
         content: {
             title: "How to start your bot once downloaded?",
             unzipFile: "Unzip the Downloaded File.",
-            node: "Install NPM and Node.js (Hint: Google Search).",
+            node: "Install PIP and python3 (Hint: Google Search).",
             start: "Run 'npm install' and 'npm start' in a terminal",
             done: "Your bot is started!",
         },
@@ -133,7 +119,7 @@ export const websiteMessages = {
         here: "here",
     },
     code_modal: {
-        title: "JavaScript code of your bot",
+        title: "Python code of your bot",
     },
     autosave:{
         cancell:"Cancel",

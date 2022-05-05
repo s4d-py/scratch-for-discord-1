@@ -2,7 +2,7 @@
     <b-navbar toggleable="lg" type="dark" style="background-color:#161719;user-select:none;" id="navbar nav-main">
         <b-navbar-brand>
             <img src="scratch.png" width="40" draggable="false">
-            Scratch For Discord
+            Scratch For Discord PY
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -13,11 +13,11 @@
                 <FileMenu></FileMenu>
                 <EditMenu></EditMenu>
                 <ToolboxModal></ToolboxModal>
-                <LanguageMenu></LanguageMenu>
+                <!---<LanguageMenu></LanguageMenu>-->
                 <ExamplesMenu></ExamplesMenu>
                 <preBuilds></preBuilds>
                 <TokenModal></TokenModal>
-                <Socials></Socials>
+                <!--<Socials></Socials>-->
                 <b-nav-item href="https://androz2091.gitbook.io/scratch-for-discord/" target="_blank">{{ $t('help') }}</b-nav-item>
                 <Credit></Credit>
             </b-navbar-nav>
@@ -39,12 +39,12 @@ import JSZip from "jszip";
 import TokenModal from "./TokenModal.vue";
 import FileMenu from "./FileMenu.vue";
 import EditMenu from "./EditMenu.vue";
-import LanguageMenu from "./LanguageMenu.vue";
+//import LanguageMenu from "./LanguageMenu.vue";
 import ExamplesMenu from "./ExamplesMenu.vue";
 import CodeModal from "./CodeModal.vue";
 import preBuilds from "./preBuilds.vue";
 import ToolboxModal from "./ToolboxModal.vue";
-import Socials from "./socials.vue";
+//import Socials from "./socials.vue";
 import Credit from "./Credit";
 import localforage from 'localforage';
 import r from "./requires";
@@ -54,14 +54,14 @@ export default {
     components: {
         FileMenu,
         EditMenu,
-        LanguageMenu,
+        //LanguageMenu,
         ExamplesMenu,
         CodeModal,
         TokenModal,
         preBuilds,
         ToolboxModal,
         Credit,
-        Socials
+        //Socials
     },
     computed: {
         configurationValidated: function () {
@@ -72,7 +72,7 @@ export default {
     },
     mounted(){
         document.getElementById("docName").addEventListener("input", function() {
-            document.title = `Scratch For Discord - ${document.querySelector("#docName").textContent}`;
+            document.title = `Scratch For Discord PY - ${document.querySelector("#docName").textContent}`;
         }, false);
         const element = document.querySelector("#docName");
         element.spellcheck = false;

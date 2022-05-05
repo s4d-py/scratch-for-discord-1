@@ -5,12 +5,19 @@ const blockName = "s4d_login";
 
 const blockData = {
     "type": "block_type",
-    "message0": "%{BKY_LOGIN}",
+    "message0": "Conect to discord (token)%1 then %2 %3",
     "args0": [
         {
             "type": "input_value",
             "name": "TOKEN",
-            "check": [ "String","Env" ]
+            "check": [ "String" ]
+        },
+        {
+            "type": "input_dummy"
+        },
+        {
+            "type": "input_statement",
+            "name": "STATEMENTS"
         }
     ],
     "colour": "#3333ff",
@@ -24,16 +31,11 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockName] = function(block) {
-    const value = Blockly.JavaScript.valueToCode(block, "TOKEN", Blockly.JavaScript.ORDER_ATOMIC);
-    const code = `await s4d.client.login(${value}).catch((e) => { 
-        s4d.tokenInvalid = true;
-        s4d.tokenError = e;
-        if (e.toString().toLowerCase().includes("token")) {
-            throw new Error("An invalid token was provided!")
-        } else {
-            throw new Error("Intents are not turned on!")
-        }
-    });\n`;
+Blockly.Python[blockName] = function(block) {
+    const value = Blockly.Python.valueToCode(block, "TOKEN", Blockly.Python.ORDER_ATOMIC);
+    const statements = Blockly.Python.statementToCode(block, "STATEMENTS");
+    const code = `s4dbot = commands.Bot
+${statements}
+s4dbot.run(${value})\n`;
     return code;
 };
