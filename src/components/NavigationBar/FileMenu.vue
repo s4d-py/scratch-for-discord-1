@@ -11,14 +11,16 @@
 <script>
 import Blockly from "blockly";
 import JSZip from "jszip";
-//import beautify from "js-beautify";
+import beautify from "js-beautify";
 
 export default {
     name: "filemenu",
     methods: {
         copy() {
-            var url = this.getWorkspaceCode()
-          
+            var url = beautify.js(this.getWorkspaceCode(), {
+                indent_size: 4,
+                space_in_empty_paren: true
+            });
            navigator.clipboard.writeText(url)
         },
         viewCode() {
@@ -82,7 +84,7 @@ export default {
         save(){
             const zip = new JSZip();
             const xmlContent = Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(this.$store.state.workspace));
-            const fileName = `${encodeURIComponent(document.querySelector("#docName").textContent).replace(/%20/g, ' ')}.s4dpy`;
+            const fileName = `${encodeURIComponent(document.querySelector("#docName").textContent).replace(/%20/g, ' ')}.s4d`;
             zip.file("blocks.xml", xmlContent);
             zip.generateAsync({
                 type: "blob"

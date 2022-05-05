@@ -15,6 +15,6 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.Python[blockName] = function() {
-    return [ '\'\\n\'', Blockly.Python.ORDER_ATOMIC ];
+Blockly.JavaScript[blockName] = function() {
+    return [ '\'\\n\'', Blockly.JavaScript.ORDER_ATOMIC ];
 };

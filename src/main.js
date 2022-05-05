@@ -124,20 +124,99 @@ Vue.mixin({
         getWorkspaceCode(){
             if(!this.$store.state.workspace) return "";
             let requires = [
-                `import os`,
-                `import disnake`
+            `let Discord = require("discord.js")`,
+            `let Database  = require("easy-json-database")`,
+              `let { MessageEmbed, MessageButton, MessageActionRow, Intents, Permissions, MessageSelectMenu }= require("discord.js")`,
+            `let logs = require("discord-logs")`
             ]
-            let requires2 = [
-                `from disnake.ext import commands`
-            ]
-            r(requires,requires2,Blockly.Python.workspaceToCode(this.$store.state.workspace))
+            let requiresjscode = [`logs(s4d.client);`]
+            r(requires,requiresjscode,Blockly.JavaScript.workspaceToCode(this.$store.state.workspace), requiresjscode)
             setTimeout(async()=>{
                 await localforage.setItem("requires",requires)
             },1000)
-
-return `${requires.join("\n")}
-${requires2.join("\n")}\n
-${Blockly.Python.workspaceToCode(this.$store.state.workspace)}`
+            let ahqcode = ``;
+            if (Blockly.JavaScript.workspaceToCode(this.$store.state.workspace).includes(`//simple host`)) {
+                ahqcode = `(async()=>{
+                    let process = require('process');
+                    const events = require('events');
+                      ${requires.join("\n")}
+    let fs = require('fs');
+                        const devMode = typeof __E_IS_DEV !== "undefined" && __E_IS_DEV;
+                        const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+                        const s4d = {
+                            Discord,
+                            database: new Database(\`\${__dirname}/database.json\`),
+    fire:null,
+                            joiningMember:null,
+                            reply:null,
+                            tokenInvalid:false,
+                            tokenError: null,
+                            player:null,
+                            manager:null,
+                            Inviter:null,
+                            message:null,
+                            notifer:null,
+                            checkMessageExists() {
+                                if (!s4d.client) throw new Error('You cannot perform message operations without a Discord.js client')
+                                if (!s4d.client.readyTimestamp) throw new Error('You cannot perform message operations while the bot is not connected to the Discord API')
+                            }
+                        };
+                        s4d.client = new s4d.Discord.Client({
+                        intents: [Object.values(s4d.Discord.Intents.FLAGS).reduce((acc, p) => acc | p, 0)],
+                        partials: ["REACTION", "CHANNEL"]
+                        });
+                        s4d.client.on('ready', () => {
+                            console.log(s4d.client.user.tag + " is alive!")
+                        })
+                        ${requiresjscode.join("\n")}         
+                        ${Blockly.JavaScript.workspaceToCode(this.$store.state.workspace)}
+                        return s4d
+                        })();
+                        `
+            } else {
+                ahqcode = `(async()=>{
+                let process = require('process');
+                process.on('uncaughtException', function (err) {
+                    console.log(\`𝕖𝕣𝕣𝕠𝕣❕\`);
+                    console.log(err);
+                  });
+                  const events = require('events');
+                  ${requires.join("\n")}
+let fs = require('fs');
+                    const devMode = typeof __E_IS_DEV !== "undefined" && __E_IS_DEV;
+                    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+                    const s4d = {
+                        Discord,
+                        database: new Database(\`./database.json\`),
+fire:null,
+                        joiningMember:null,
+                        reply:null,
+                        tokenInvalid:false,
+                        tokenError: null,
+                        player:null,
+                        manager:null,
+                        Inviter:null,
+                        message:null,
+                        notifer:null,
+                        checkMessageExists() {
+                            if (!s4d.client) throw new Error('You cannot perform message operations without a Discord.js client')
+                            if (!s4d.client.readyTimestamp) throw new Error('You cannot perform message operations while the bot is not connected to the Discord API')
+                        }
+                    };
+                    s4d.client = new s4d.Discord.Client({
+                    intents: [Object.values(s4d.Discord.Intents.FLAGS).reduce((acc, p) => acc | p, 0)],
+                    partials: ["REACTION", "CHANNEL"]
+                    });
+                    s4d.client.on('ready', () => {
+                        console.log(s4d.client.user.tag + " is alive!")
+                    })
+                    ${requiresjscode.join("\n")}         
+                    ${Blockly.JavaScript.workspaceToCode(this.$store.state.workspace)}
+                    return s4d
+                    })();`
+                    
+            }
+            return ahqcode;
         }
     }
 });
