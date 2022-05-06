@@ -1,4 +1,4 @@
-export default (Blockly) => {
+export default (Blockly, value) => {
   return (`
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
 
@@ -226,12 +226,12 @@ export default (Blockly) => {
                 </value>
             </block>
             <block type="s4d_includes">
-                <value name="TEXT">
+                <value name="STRING">
                     <shadow type="text">
                         <field name="TEXT">abc</field>
                     </shadow>
                 </value>
-                <value name="INCLUDES">
+                <value name="SUBSTRING">
                     <shadow type="text">
                         <field name="TEXT">a</field>
                     </shadow>
@@ -310,7 +310,17 @@ export default (Blockly) => {
             </block>
             <block type="lists_length" />
             <block type="lists_isEmpty" />
-            <block type="s4d_includes"/>
+            <block type="s4d_includes">
+<value name="STRING">
+                    <block type="variables_get">
+                        <field name="VAR" id="fztpO]@!)|*c81-vAZ)P">list</field>
+                    </block>
+                </value>
+                <value name="SUBSTRING">
+                    <shadow type="text">
+                        <field name="TEXT">a</field>
+                    </shadow>
+                </value></block>
             <block type="lists_sort"/>
 						<block type="lists_reverse"/>
             <block type="lists_indexOf">
@@ -419,17 +429,49 @@ export default (Blockly) => {
 <category name="{{ TOOLBOX_FUNCTIONS }}" colour="#995ba5" custom="PROCEDURE" />
 
 <sep class="bt"/>
+<category name="{{ TOOLBOX_OTHER }}" colour="#D14081"> 
+<block type="text_print">
+<value name="TEXT">
+      <shadow type="text">
+        <field name="TEXT">Hey!</field>
+      </shadow>
+    </value>
+</block>
+</category>
+<sep class="bt"/>
+                    <category name="Favorites" colour="#FFFF00" css-icon="customIcon fa fa-star">
+                        ${value === null ? "" : value.map(c => `<block type="${c}"/>`)}
+                    </category>
+				<sep class="bt"/>
 
    <category name="{{ TOOLBOX_BASE }}" colour="#F46580">
-<block type="s4d_login"/>
+<block type="s4d_login">
+<value name="TOKEN">
+                    <shadow type="text">
+                        <field name="TEXT">Your bot token</field>
+                    </shadow>
+                </value>
+</block>
 <block type="s4d_on_connected"/>
 </category>
 
 <category name="{{ TOOLBOX_E_MESSAGES }}" colour="#41AAC0">
 <block type="s4d_on_message"/>
 <block type="s4d_message_content"/>
-<block type="s4d_send"/>
-<block type="s4d_reply"/>
+<block type="s4d_send">
+<value name="CONTENT">
+                    <shadow type="text">
+                        <field name="TEXT">Hey!</field>
+                    </shadow>
+                </value>
+</block>
+<block type="s4d_reply">
+<value name="CONTENT">
+                    <shadow type="text">
+                        <field name="TEXT">Hey!</field>
+                    </shadow>
+                </value>
+</block>
 </category>
 </xml>
 `.replace(/{{\s([A-z]{3,})\s}}/g, (x) => {

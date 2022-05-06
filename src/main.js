@@ -125,16 +125,19 @@ Vue.mixin({
         getWorkspaceCode(){
             if(!this.$store.state.workspace) return "";
             let requires = [
-            `Disnake`
+                `import os`,
+                `import disnake`
             ]
-            let requiresjscode = [`logs(s4d.client);`]
-            r(requires,requiresjscode,Blocklypy.workspaceToCode(this.$store.state.workspace))
+            let requires2 = [
+                `from disnake.ext import commands`
+            ]
+            r(requires,requires2,Blocklypy.workspaceToCode(this.$store.state.workspace))
             setTimeout(async()=>{
                 await localforage.setItem("requires",requires)
             },1000)
-            return  `${requiresjscode.join("\n")}
-
-${Blocklypy.workspaceToCode(this.$store.state.workspace)}` 
+            return  `${requires.join("\n")}
+${requires2.join("\n")}\n
+${Blockly.Python.workspaceToCode(this.$store.state.workspace)}` 
         }
     }
 });

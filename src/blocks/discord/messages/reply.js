@@ -65,12 +65,5 @@ registerRestrictions(blockName, [
         types: [
           "CONTENT"
         ]
-    },
-    {
-        type: "parent",
-        message: "RES_MUST_BE_IN_ON_MESSAGE",
-        types: [
-            "s4d_on_message"
-        ]
     }
 ]);

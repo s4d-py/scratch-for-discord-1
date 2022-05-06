@@ -41,9 +41,9 @@ export const websiteMessages = {
         }
     },
     file: {
-        copy:"Copy Javascript Code",
+        copy:"Copy Python Code",
         title: "File",
-        javascript: "Export to Javascript",
+        javascript: "Export to Python",
         open: "Open a file...",
       confirm: {
             title: "Delete current blocks?",
@@ -133,7 +133,7 @@ export const websiteMessages = {
         here: "here",
     },
     code_modal: {
-        title: "JavaScript code of your bot",
+        title: "Python code of your bot",
     },
     autosave:{
         cancell:"Cancel",
