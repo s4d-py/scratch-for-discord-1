@@ -1,9 +1,10 @@
 import Blockly from "blockly/core";
+import Blocklypy from "blockly/python"
 
-const blockName = "s4d_includes";
+const blockName = "s4d_ends_with";
 
 const blockData = {
-    "message0": "%1 %3 %2",
+    "message0": "%1 ends with %2",
     "args0": [
         {
             "type": "input_value",
@@ -14,21 +15,7 @@ const blockData = {
             "type": "input_value",
             "name": "SUBSTRING",
             "check": [ "String" ]
-        },
-      {
-        "type": "field_dropdown",
-        "name": "TYPE",
-        "options": [
-            [
-              "includes", 
-              "in"
-            ],
-            [
-                  "does not include",
-                  "not in"
-              ],
-            ]
-    }
+        }
     ],
     "output": "Boolean",
     "colour": "#5ba58b",
@@ -42,10 +29,9 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.Python[blockName] = function(block) {
+Blocklypy[blockName] = function(block) {
     const string = Blockly.Python.valueToCode(block, "STRING", Blockly.Python.ORDER_ATOMIC);
     const substring = Blockly.Python.valueToCode(block, "SUBSTRING", Blockly.Python.ORDER_ATOMIC);
-  const type = block.getFieldValue("TYPE");
-    const code = [ `${substring} ${type} ${string}`, Blockly.Python.ORDER_NONE ];
+    const code = [ `(${string} || '').endsWith(${substring} || '')`, Blockly.Python.ORDER_NONE ];
     return code;
 };
