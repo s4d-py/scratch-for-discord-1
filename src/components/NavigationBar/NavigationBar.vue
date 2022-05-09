@@ -17,7 +17,7 @@
                 <ExamplesMenu></ExamplesMenu>
                 <preBuilds></preBuilds>
                 <TokenModal></TokenModal>
-                <!--<Socials></Socials>-->
+                <Socials></Socials>
                 <b-nav-item href="https://androz2091.gitbook.io/scratch-for-discord/" target="_blank">{{ $t('help') }}</b-nav-item>
                 <Credit></Credit>
             </b-navbar-nav>
@@ -44,7 +44,7 @@ import ExamplesMenu from "./ExamplesMenu.vue";
 import CodeModal from "./CodeModal.vue";
 import preBuilds from "./preBuilds.vue";
 import ToolboxModal from "./ToolboxModal.vue";
-//import Socials from "./socials.vue";
+import Socials from "./socials.vue";
 import Credit from "./Credit";
 import localforage from 'localforage';
 import r from "./requires";
@@ -61,7 +61,7 @@ export default {
         preBuilds,
         ToolboxModal,
         Credit,
-        //Socials
+        Socials
     },
     computed: {
         configurationValidated: function () {
@@ -91,7 +91,7 @@ export default {
                     confirm: this.$t('download.confirm')
                 },
             }).then(async result => {
-                let requires = [`"discord.js": "^13.1.0",`,`"process":"^0.11.10",`,`"easy-json-database": "^1.5.0",`]
+                let requires = [`python = "^3.8"`,`disnake 2.5.0`]
                 let oldrequires = await localforage.getItem("requires")
                 r(requires,oldrequires)
                 if(result){
@@ -101,7 +101,15 @@ export default {
                     zip.file("blocks.xml", xmlContent);
                     const pythonContent = this.getWorkspaceCode();
 
-                    zip.file("bot.js", pythonContent);
+                    zip.file("bot.py", pythonContent);
+                  zip.file("pyproject.toml", `[tool.poetry]
+name = "scratch-for-discord-py-bot"
+version = "1.0.0"
+description = "A bot make in scratch for discord py"
+authors = ["s4d-py"]
+
+[tool.poetry.dependencies]
+${requires.join("\n")}`)
                     zip.generateAsync({
                         type: "blob"
                     })

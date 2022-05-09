@@ -1,10 +1,10 @@
 import * as Blockly from "blockly/core";
-import { registerRestrictions } from "../../../restrictions";
+import { registerRestrictions } from "../../restrictions";
 
-const blockName = "s4d_reply";
+const blockName = "s4d_inter_reply";
 
 const blockData = {
-    "message0": "Send reply %1 mention %2",
+    "message0": "Reply to interaction %1 Emphereal? %2",
     "args0": [
         {
             "type": "input_value",
@@ -39,21 +39,21 @@ Blockly.Python[blockName] = function(block){
         null;
         if((contentType === "MessageEmbed") || (!contentType && typeof contentType === "object")){
           if(contentType === "MessageEmbed"){
-            const code = `await s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
+            const code = `await inter.response.send_message(${content}, ephemeral = ${boolean})\n`;
             return code;
           }else{
-            const code = `await s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
+            const code = `await inter.response.send_message(${content}, ephemeral = ${boolean})\n`;
             return code;
           }
         }else if((contentType === "embed") || (!contentType && typeof contentType === "object")){
-            const code = `await s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
+            const code = `await inter.response.send_message(${content}, ephemeral = ${boolean})\n`;
             return code;
         } else {
-            const code = `await s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
+            const code = `await inter.response.send_message(${content}, ephemeral = ${boolean})\n`;
             return code;
         }
     } else {
-        const code = `await s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
+        const code = `await inter.response.send_message(${content}, ephemeral = ${boolean})\n`;
         return code;
     }
 };

@@ -1,7 +1,7 @@
 export default async function require(array,oldarray) {
 oldarray.forEach(js=>{
-    if(js.includes("HGFDFGHSDYUFVWGIFOHWF")){
-        array.push(`"easy-db-json": "^1.1.1"`)
+    if(js.includes("flask")){
+        array.push(`Flask = "^2.0.2"`)
     }
 })
 array.reverse()

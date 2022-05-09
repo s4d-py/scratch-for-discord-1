@@ -1,6 +1,8 @@
-export default async function require(array,code,py) {
-  if(py.includes("AJHSGUGVFUYWGFUOWSH")){
-    array.push(`const dootabase = require("easy-db-json");
-dootabase.setFile("./database.json");`)
+export default async function require(array,intents,py) {
+  if(py.includes("flask")){
+    array.push(`keep_alive()`)
+  }
+  if(py.includes("s4dmessage")){
+    intents.push(`intents.message_content = True`)
   }
 }

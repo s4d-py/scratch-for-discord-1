@@ -28,6 +28,7 @@ Blockly.Blocks[blockName] = {
 Blockly.Python[blockName] = function(block) {
     const statements = Blockly.Python.statementToCode(block, "STATEMENTS");
     const code = `@s4dbot.event
-async def on_ready():\n${statements}\n`;
+async def on_ready():
+${statements}`;
     return code;
 };

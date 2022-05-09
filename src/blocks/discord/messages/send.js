@@ -32,20 +32,20 @@ Blockly.Python[blockName] = function(block){
         block.getInput("CONTENT").connection.targetConnection.getSourceBlock().outputConnection.check_[0] :
         null;
         if ((contentType === "var")) {
-            const code = `s4dmessage.channel.send(${content})\n`;
+            const code = `await s4dmessage.channel.send(${content})\n`;
             return code;
         }else if((contentType === "embed") || (!contentType && typeof contentType === "object")){
-            const code = `s4dmessage.channel.send(${content})\n`;
+            const code = `await s4dmessage.channel.send(${content})\n`;
             return code;
         } else if((contentType === "MessageEmbed") || (!contentType && typeof contentType === "object")){
-            const code = `s4dmessage.channel.send(${content})\n`;
+            const code = `await s4dmessage.channel.send(${content})\n`;
             return code;
         } else {
-            const code = `s4dmessage.channel.send(${content})\n`;
+            const code = `await s4dmessage.channel.send(${content})\n`;
             return code;
         }
     } else {
-        const code = `s4dmessage.channel.send(${content})\n`;
+        const code = `await s4dmessage.channel.send(${content})\n`;
         return code;
     }
 };

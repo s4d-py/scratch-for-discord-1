@@ -126,18 +126,21 @@ Vue.mixin({
             if(!this.$store.state.workspace) return "";
             let requires = [
                 `import os`,
-                `import disnake`
+                `import disnake`,
+              `from disnake.ext import commands`
             ]
-            let requires2 = [
-                `from disnake.ext import commands`
-            ]
-            r(requires,requires2,Blocklypy.workspaceToCode(this.$store.state.workspace))
+            let requires2 = []
+            let intents = []
+            r(requires2,intents,Blocklypy.workspaceToCode(this.$store.state.workspace))
             setTimeout(async()=>{
                 await localforage.setItem("requires",requires)
             },1000)
-            return  `${requires.join("\n")}
-${requires2.join("\n")}\n
-${Blockly.Python.workspaceToCode(this.$store.state.workspace)}` 
+            return  `${requires.join("\n")}\n
+intents = disnake.Intents.default()\n
+${intents.join("\n")}\n
+${Blockly.Python.workspaceToCode(this.$store.state.workspace)}
+${requires2.join("\n")}
+Run_bot()`
         }
     }
 });

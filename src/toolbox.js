@@ -445,6 +445,7 @@ export default (Blockly, value) => {
 				<sep class="bt"/>
 
    <category name="{{ TOOLBOX_BASE }}" colour="#F46580">
+<label text="Mandatory"></label>
 <block type="s4d_login">
 <value name="TOKEN">
                     <shadow type="text">
@@ -452,7 +453,24 @@ export default (Blockly, value) => {
                     </shadow>
                 </value>
 </block>
+<label text="For replit"></label>
+<block type="env">
+<value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT">env-name</field>
+                    </shadow>
+                </value>
+            </block>
+<block type="webserver">
+<value name="URL">
+                    <shadow type="text">
+                        <field name="TEXT">This site was created to keep bot on 25/8</field>
+                    </shadow>
+                </value>
+</block>
+<label text="Base block"></label>
 <block type="s4d_on_connected"/>
+<label text="Bot info"></label>
 </category>
 
 <category name="{{ TOOLBOX_E_MESSAGES }}" colour="#41AAC0">
@@ -471,6 +489,37 @@ export default (Blockly, value) => {
                         <field name="TEXT">Hey!</field>
                     </shadow>
                 </value>
+<value name="boolean">
+<shadow type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+            </shadow>
+</value>
+</block>
+</category>
+<category name="Slash" colour="#f5ab1a">
+<block type="s4d_on_slash">
+<value name="NAME">
+                    <shadow type="text">
+                        <field name="TEXT">ping</field>
+                    </shadow>
+                </value>
+<value name="DESC">
+                    <shadow type="text">
+                        <field name="TEXT">Pong!</field>
+                    </shadow>
+                </value>
+</block>
+<block type="s4d_inter_reply">
+<value name="CONTENT">
+                    <shadow type="text">
+                        <field name="TEXT">Hey!</field>
+                    </shadow>
+                </value>
+<value name="boolean">
+<shadow type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+            </shadow>
+</value>
 </block>
 </category>
 </xml>

@@ -5,7 +5,7 @@ const blockName = "s4d_login";
 
 const blockData = {
     "type": "block_type",
-    "message0": "Conect to discord (token)%1 then %2 %3",
+    "message0": "Conect to discord (token) %1 then %2 %3",
     "args0": [
         {
             "type": "input_value",
@@ -20,6 +20,7 @@ const blockData = {
             "name": "STATEMENTS"
         }
     ],
+    "inputsInline": false,
     "colour": "#3333ff",
     "tooltip": "%{BKY_LOGIN_TOOLTIP}",
     "helpUrl": ""
@@ -32,10 +33,13 @@ Blockly.Blocks[blockName] = {
 };
 
 Blockly.Python[blockName] = function(block) {
+  var default_token
     const value = Blockly.Python.valueToCode(block, "TOKEN", Blockly.Python.ORDER_ATOMIC);
     const statements = Blockly.Python.statementToCode(block, "STATEMENTS");
-    const code = `s4dbot = commands.Bot
+  default_token = value || null;
+    const code = `\ndef Run_bot():
+  s4dbot = commands.Bot(intents=intents)
 ${statements}
-s4dbot.run(${value})\n`;
+  s4dbot.run(${default_token})\n`;
     return code;
 };
