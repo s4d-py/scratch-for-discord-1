@@ -13,7 +13,7 @@ export default {
                 position: 'center',
                 icon: 'success',
                 //'Androz, snowflake107 - original s4d\n7coil - Discord blocks',
-                html: '<h3 style="background: -webkit-linear-gradient(60deg, #eee, #333);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">S4D original s4d by Androz, snowflake107<br>Discord Blocks by 7coil </h3>Scratch for discord PY is maintained by frostzzone',
+                html: '<h3 style="background: -webkit-linear-gradient(60deg, #eee, #333);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">S4D original s4d by Androz, snowflake107<br>Discord Blocks by 7coil </h3>Scratch for discord PY is maintained by frostzzone and Parham',
                 showConfirmButton: true
             })
         },
