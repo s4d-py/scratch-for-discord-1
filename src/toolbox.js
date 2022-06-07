@@ -437,6 +437,7 @@ export default (Blockly, value) => {
       </shadow>
     </value>
 </block>
+<block type="s4d_try_and_except"/>
 </category>
 <sep class="bt"/>
                     <category name="Favorites" colour="#FFFF00" css-icon="customIcon fa fa-star">
@@ -450,6 +451,16 @@ export default (Blockly, value) => {
 <value name="TOKEN">
                     <shadow type="text">
                         <field name="TEXT">Your bot token</field>
+                    </shadow>
+                </value>
+<value name="PREFIX">
+                    <shadow type="text">
+                        <field name="TEXT">!</field>
+                    </shadow>
+                </value>
+<value name="GUILDS">
+                    <shadow type="lists_create_with">
+                      <mutation items="0" />
                     </shadow>
                 </value>
 </block>
@@ -496,6 +507,27 @@ export default (Blockly, value) => {
 </value>
 </block>
 </category>
+<category name="Commands" colour="#f5ab1a">
+<block type="s4d_on_command">
+<value name="NAME">
+                    <shadow type="text">
+                        <field name="TEXT">ping</field>
+                    </shadow>
+                </value>
+<value name="FUNC">
+                    <shadow type="text">
+                        <field name="TEXT">ping</field>
+                    </shadow>
+                </value>
+</block>
+<block type="command_arg">
+<value name="VALUE">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+</block>
+</category>
 <category name="Slash" colour="#f5ab1a">
 <block type="s4d_on_slash">
 <value name="NAME">
@@ -521,6 +553,10 @@ export default (Blockly, value) => {
             </shadow>
 </value>
 </block>
+</category>
+<category name="Securing" colour="#4c79ff">
+  <block type="parham_encoding"/>
+  <block type="parham_decoding"/>
 </category>
 </xml>
 `.replace(/{{\s([A-z]{3,})\s}}/g, (x) => {

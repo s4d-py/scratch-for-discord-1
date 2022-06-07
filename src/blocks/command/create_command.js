@@ -1,9 +1,9 @@
 import * as Blockly from "blockly";
 
-const blockName = "s4d_on_slash";
+const blockName = "s4d_on_command";
 
 const blockData = {
-    "message0": "Create slash command /%3 with description %4 %1 %2",
+    "message0": "Create command with name %3 and function name %4 then %1 %2",
     "colour": "#F5AB1A",
     "args0": [
         {
@@ -20,9 +20,9 @@ const blockData = {
         },
         {
           "type": "input_value",
-          "name": "DESC",
+          "name": "FUNC",
           "check": "String"
-        }
+        },
     ],
     "previousStatement": null,
     "nextStatement": null,
@@ -37,9 +37,13 @@ Blockly.Blocks[blockName] = {
 Blockly.Python[blockName] = function(block) {
     const statements = Blockly.Python.statementToCode(block, "STATEMENTS");
   const name = Blockly.JavaScript.valueToCode(block, "NAME", Blockly.JavaScript.ORDER_ATOMIC);
-  const desc = Blockly.JavaScript.valueToCode(block, "Desc", Blockly.JavaScript.ORDER_ATOMIC);
-    const code = `@s4dbot.slash_command(description=${desc})
-async def ${name.toLowerCase()}(inter):
+  let func = Blockly.JavaScript.valueToCode(block, "FUNC", Blockly.JavaScript.ORDER_ATOMIC);
+  
+  if(func == undefined || !func.length){
+    func = name
+  }
+    const code = `@s4dbot.command(name=${name})
+async def ${func}(ctx, *args):
 ${statements}`;
     return code;
 };

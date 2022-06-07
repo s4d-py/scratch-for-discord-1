@@ -17,11 +17,11 @@ Blockly.Tooltip.HOVER_MS = 100;
 
 // Load blocks
 import "./blocks/folders.js"
-  
+
 import "./prompt";
 
 import Theme from '@blockly/theme-modern';
-
+  
 export default {
     name: "app",
     components: {

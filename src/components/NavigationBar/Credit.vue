@@ -1,5 +1,5 @@
 <template>
-        <b-nav-item @click="credit">{{ $t('Credit') }}</b-nav-item>
+        <b-nav-item @click="credit">Credit</b-nav-item>
 </template>
 
 <script>
@@ -12,8 +12,8 @@ export default {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'Androz, snowflake107 - original s4d\n7coil - Discord blocks',
-                text: 'Scratch for discord PY is maintained by frostzzone',
+                //'Androz, snowflake107 - original s4d\n7coil - Discord blocks',
+                html: '<h3 style="background: -webkit-linear-gradient(60deg, #eee, #333);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">S4D original s4d by Androz, snowflake107<br>Discord Blocks by 7coil </h3>Scratch for discord PY is maintained by frostzzone',
                 showConfirmButton: true
             })
         },

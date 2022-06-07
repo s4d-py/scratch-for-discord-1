@@ -20,6 +20,11 @@
                 <Socials></Socials>
                 <b-nav-item href="https://androz2091.gitbook.io/scratch-for-discord/" target="_blank">{{ $t('help') }}</b-nav-item>
                 <Credit></Credit>
+              <b-nav-item
+          class="theme-changer"
+          style="width: 32px; height: 32px; margin-top: 5px"
+          @click="changeTheme"
+        ></b-nav-item>
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
                 <b-button style="border-right-color: #161719; border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em">
@@ -48,6 +53,7 @@ import Socials from "./socials.vue";
 import Credit from "./Credit";
 import localforage from 'localforage';
 import r from "./requires";
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 //import swal from "sweetalert2";
 export default {
     name: "navbar",
@@ -126,7 +132,29 @@ ${requires.join("\n")}`)
                     });
                 }
             });
-        }
+        },
+      changeTheme() {
+      if (localStorage.getItem("theme") === "dark") {
+        localStorage.setItem("theme", "light");
+        document.querySelector("html").classList.add("light-them");
+        console.log("changed theme to light");
+      } else {
+        localStorage.setItem("theme", "dark");
+        document.querySelector("html").classList.remove("light-them");
+        console.log("changed theme to dark");
+      }
+    },
     }
 }
+  if(localStorage.getItem("theme") == null){
+    localStorage.setItem("theme", "dark");
+  }
+  (async() => {
+  if (localStorage.getItem("theme") === "light") {
+    document.querySelector("html").classList.add("light-them");
+      } else {
+    await delay(1 * 1000);
+     document.querySelector("html").classList.remove("light-them");
+      }
+       })()
 </script>

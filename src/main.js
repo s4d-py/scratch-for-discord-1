@@ -145,7 +145,6 @@ Run_bot()`
     }
 });
 
-
 new Vue({
     store,
     render: h => h(App),
