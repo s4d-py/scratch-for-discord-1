@@ -24,7 +24,7 @@ const blockData = {
   ],
   "output": null,
   "colour": 195,
-  "tooltip": "Encode String",
+  "tooltip": "Decode String",
   "helpUrl": ""
 };
 

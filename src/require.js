@@ -9,4 +9,7 @@ export default async function require(array,intents,py) {
   if(py.includes("base64")){
     intents.push(`import base64`)
   }
+  if(py.includes("time.sleep(")){
+    intents.push(`import time`)
+  }
 }

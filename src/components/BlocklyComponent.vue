@@ -248,6 +248,46 @@ export default {
             val = await localforage.getItem("fav") === null ? null : await localforage.getItem("fav")
         },1000)
 
+if (window.location.pathname == "/debu" && (!window.location.href.includes("s4d-py.vercel.app"))) {
+Blockly.ContextMenuRegistry.registry.register({
+      displayText: 'Spawn block via Internal name',
+      preconditionFn: function() {
+         return "enabled"
+      },
+      callback: function() {
+        let input = prompt("Block Internal Name")
+        if (!input) {
+            return
+        }
+        let xml = Blockly.Xml.textToDom('<xml><block type="' + input + '"></block></xml>');
+        try {
+            Blockly.Xml.appendDomToWorkspace(xml, workspace)
+        } catch {
+            console.log("could not spawn block!")
+            alert(`Block ${String(input)} does not exist or was not defined`)
+        }
+      },
+      scopeType: Blockly.ContextMenuRegistry.ScopeType.WORKSPACE,
+      id: 'spawnblock',
+      weight: 500,
+    });
+}
+
+  /*if (window.location.pathname == "/debu" && (!window.location.href.includes("s4d-py.vercel.app"))) {
+    Blockly.ContextMenuRegistry.registry.register({
+          displayText: 'Log all Toolbox blocks',
+          preconditionFn: function() {
+             return "enabled"
+          },
+          callback: function() {
+               logtoolblocks(true)
+          },
+          scopeType: Blockly.ContextMenuRegistry.ScopeType.WORKSPACE,
+          id: 'logtoolblocks',
+          weight: 500,
+        });
+}*/
+  
 function svgToPng_(data, width, height, callback) {
     var canvas = document.createElement("canvas");
     var context = canvas.getContext("2d");

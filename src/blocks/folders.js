@@ -11,4 +11,5 @@ import "./slash"
 import "./command"
 
 // Parham Blocks
+import "./Parham"
 import "./securing"
