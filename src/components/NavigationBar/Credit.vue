@@ -11,9 +11,11 @@ export default {
         credit() {
             Swal.fire({
                 position: 'center',
-                icon: 'success',
+                icon: 'info',
                 //'Androz, snowflake107 - original s4d\n7coil - Discord blocks',
-                html: '<h3 style="background: -webkit-linear-gradient(60deg, #eee, #333);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">S4D original s4d by Androz, snowflake107<br>Discord Blocks by 7coil </h3>Scratch for discord PY is maintained by frostzzone and Parham',
+                html: `<h3 style="background: -webkit-linear-gradient(60deg, #eee, #333);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Original s4d by Androz, snowflake107<br>Discord Blocks by 7coil </h3>Scratch for discord PY is maintained by:
+                  <span style="color:#2aa9bd">frostzzone</span>,
+                  <span style="color:#ff7b00">Parham</span>`,
                 showConfirmButton: true
             })
         },
