@@ -50,7 +50,7 @@ Blockly.Python[blockName] = function(block) {
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   var value_key = Blockly.Python.valueToCode(block, 'key', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = null
+  var code = null;
   if(dropdown_mode == "encrypt") {
     code = `Fernet(${value_key}).encrypt(${value_text}.encode("ascii")).decode("ascii")`;
   }

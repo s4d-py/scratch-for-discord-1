@@ -1,4 +1,5 @@
 import "./Try Except"
-import "./wait"
+import "./Wait"
 import "./exec"
-import "./insertcode"
+import "./Insert Code"
+import "./No Code"

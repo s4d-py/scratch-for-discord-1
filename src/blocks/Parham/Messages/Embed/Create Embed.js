@@ -35,9 +35,9 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.Python[blockName] = function(block) {
-  var statements_embed = Blockly.Python.statementToCode(block, 'embed');
+Blockly.Python[blockName] = function(/*block*/) {
+  // var statements_embed = Blockly.Python.statementToCode(block, 'embed');
   // TODO: Assemble Python into code variable.
-  var code = `${statements_embed}\n`;
+  var code = '';
   return code;
 };

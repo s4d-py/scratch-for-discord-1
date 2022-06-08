@@ -469,6 +469,7 @@ ${toolbox_search_category}
 </block>
 <block type="parham_exec"/>
 <block type="parham_insertcode"/>
+<block type="parham_no"/>
 </category>
 <sep class="bt"/>
                     <category name="Favorites" colour="#FFFF00" css-icon="customIcon fa fa-star">
@@ -587,6 +588,10 @@ ${toolbox_search_category}
             </shadow>
 </value>
 </block>
+</category>
+<category name="Files" colour="#0066ff">
+<block type="parham_files_write"/>
+<block type="parham_files_read"/>
 </category>
 <category name="Securing" colour="#4c79ff">
 <block type="parham_securing_code"/>
