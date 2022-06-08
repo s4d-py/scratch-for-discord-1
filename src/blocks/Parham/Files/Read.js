@@ -16,7 +16,7 @@ const blockData = {
   ],
   "output": "String",
   "colour": 240,
-  "tooltip": "Write Text On File",
+  "tooltip": "Read File",
   "helpUrl": ""
 };
 

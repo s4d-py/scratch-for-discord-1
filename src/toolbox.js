@@ -593,6 +593,9 @@ ${toolbox_search_category}
 <block type="parham_files_write"/>
 <block type="parham_files_read"/>
 <block type="parham_files_open"/>
+<label text="To Use Bellow Block You Need Use Open Block"></label>
+<block type="parham_files_thenwrite"/>
+<block type="parham_files_thenread"/>
 </category>
 <category name="Securing" colour="#4c79ff">
 <block type="parham_securing_code"/>

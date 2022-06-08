@@ -15,13 +15,14 @@ const blockData = {
     },
     {
       "type": "input_statement",
-      "name": "open"
+      "name": "open",
+      "check": "open"
     }
   ],
   "previousStatement": null,
   "nextStatement": null,
   "colour": 240,
-  "tooltip": "Write Text On File",
+  "tooltip": "Open File Then",
   "helpUrl": ""
 };
 
