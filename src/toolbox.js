@@ -588,9 +588,14 @@ ${toolbox_search_category}
 </category>
 <category name="Securing" colour="#4c79ff">
 <block type="parham_securing_code"/>
-<label text="Encrypt Or Decrypt Blocks Soon"></label>
+<label text="cryptography"></label>
+<block type="parham_securing_cryptgeneratekey"/>
+<block type="parham_securing_cryptkey"/>
+<block type="parham_securing_encrypt"/>
+<block type="parham_securing_decrypt"/>
 </category>
 <category name="Replit DB" colour="#102770">
+<label text="For Replit Only"></label>
 <block type="parham_replitdb_setitemto"/>
 <block type="parham_replitdb_getitem"/>
 <block type="parham_replitdb_deleteitem"/>

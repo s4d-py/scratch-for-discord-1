@@ -1,12 +1,12 @@
 import * as Blockly from "blockly";
 
-const blockName = "parham_replitdb_getallitems";
+const blockName = "parham_securing_cryptkey";
 
 const blockData = {
-  "message0": "Get All Items From Replit DB",
-  "output": null,
-  "colour": 255,
-  "tooltip": "Get All Items From Replit DB",
+  "message0": "Key",
+  "output": "key",
+  "colour": 210,
+  "tooltip": "Key",
   "helpUrl": ""
 };
 
@@ -18,7 +18,7 @@ Blockly.Blocks[blockName] = {
 
 Blockly.Python[blockName] = function() {
   // TODO: Assemble Python into code variable.
-  var code = 'replit.db.keys()';
+  var code = 'key';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };

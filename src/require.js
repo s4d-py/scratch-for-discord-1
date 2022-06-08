@@ -12,6 +12,9 @@ export default async function require(array,intents,py) {
   if(py.includes("base64.b64")){
     intents.push(`import base64`)
   }
+  if(py.includes("Fernet")){
+    intents.push(`from cryptography.fernet import Fernet`)
+  }
   if(py.includes("replit.db")){
     intents.push(`import replit`)
   }

@@ -11,9 +11,10 @@ const blockData = {
       "check": "String"
     }
   ],
-  "output": null,
+  "previousStatement": null,
+  "nextStatement": null,
   "colour": 255,
-  "tooltip": "Get All Items From Replit",
+  "tooltip": "Delete Item From Replit DB",
   "helpUrl": ""
 };
 
