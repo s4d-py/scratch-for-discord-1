@@ -1,5 +1,5 @@
 export default (Blockly, value/*, searching*/) => {
-  const allow_toolbox_search = false
+  const allow_toolbox_search = true
   var toolbox_search_category
     if (allow_toolbox_search) {
         toolbox_search_category = `

@@ -25,6 +25,7 @@
           style="width: 32px; height: 32px; margin-top: 5px"
           @click="changeTheme"
         ></b-nav-item>
+              <div id="block-counter" style="margin-right: 5px; font-size: 90%"><p style="color:rgb(182, 182, 182);">0 blocks</p></div>
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
                 <b-button style="border-right-color: #161719; border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em">
