@@ -592,6 +592,7 @@ ${toolbox_search_category}
 <category name="Files" colour="#0066ff">
 <block type="parham_files_write"/>
 <block type="parham_files_read"/>
+<block type="parham_files_open"/>
 </category>
 <category name="Securing" colour="#4c79ff">
 <block type="parham_securing_code"/>

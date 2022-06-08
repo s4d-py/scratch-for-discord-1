@@ -1,22 +1,21 @@
 import * as Blockly from "blockly";
 
-const blockName = "parham_files_write";
+const blockName = "parham_files_open";
 
 const blockData = {
-  "message0": "Write Text %1 %2 On File %3",
+  "message0": "Open File %1 %2 Then %3",
   "args0": [
     {
       "type": "input_value",
-      "name": "text",
+      "name": "file",
       "check": "String"
     },
     {
       "type": "input_dummy"
     },
     {
-      "type": "input_value",
-      "name": "file",
-      "check": "String"
+      "type": "input_statement",
+      "name": "open"
     }
   ],
   "previousStatement": null,
@@ -33,9 +32,10 @@ Blockly.Blocks[blockName] = {
 };
 
 Blockly.Python[blockName] = function(block) {
-  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   var value_file = Blockly.Python.valueToCode(block, 'file', Blockly.Python.ORDER_ATOMIC);
+  var statements_open = Blockly.Python.statementToCode(block, 'open');
   // TODO: Assemble Python into code variable.
-  var code = `open(${value_file}, "w", encoding="utf8").write(${value_text})\n`;
+  var code = `with open(${value_file}, "w", encoding="utf8") as file:
+${statements_open}\n`;
   return code;
 };
