@@ -39,7 +39,7 @@ Blockly.Python[blockName] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = `try:
 ${statements_try}
-except Exception as error:
+except Exception:
 ${statements_except}`;
   return code;
 };

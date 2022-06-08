@@ -3,15 +3,12 @@ import * as Blockly from "blockly";
 const blockName = "parham_files_read";
 
 const blockData = {
-  "message0": "Read File %1 %2",
+  "message0": "Read File %1",
   "args0": [
     {
       "type": "input_value",
       "name": "file",
       "check": "String"
-    },
-    {
-      "type": "input_dummy"
     }
   ],
   "output": "String",

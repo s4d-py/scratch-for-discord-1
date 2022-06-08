@@ -13,7 +13,7 @@ const blockData = {
         }
     ],
     "colour": "#F46580",
-    "tooltip": "Create A Webserver For Your Repl To Make Your Bot 24/7",
+    "tooltip": "Create a Webserver for your repl to make your bot 24/7",
     "helpUrl": ""
 };
 

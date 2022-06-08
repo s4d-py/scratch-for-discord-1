@@ -11,7 +11,7 @@ const blockData = {
           "check": "String"
         },
 		],
-    "tooltip": null,
+    "tooltip": "Use replit env",
     "output": "String",
     "helpUrl": ""
 };

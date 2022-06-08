@@ -7,6 +7,7 @@ import "./other"
 //Discord
 import "./discord/base"
 import "./discord/messages"
+import "./discord/embed"
 import "./slash"
 import "./command"
 

@@ -41,5 +41,5 @@ Blockly.Blocks[blockName] = {
 Blockly.Python[blockName] = function(block) {
   const color = block.getFieldValue("COLOR");
     const code = `${color}`;
-    return code;
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };

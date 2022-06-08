@@ -1,1 +1,1 @@
-import "./Create Embed"
+import "./Embed"

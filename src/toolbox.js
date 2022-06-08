@@ -1,5 +1,5 @@
 export default (Blockly, value/*, searching*/) => {
-  const allow_toolbox_search = true
+  const allow_toolbox_search = false
   var toolbox_search_category
     if (allow_toolbox_search) {
         toolbox_search_category = `
@@ -539,8 +539,38 @@ ${toolbox_search_category}
             </shadow>
 </value>
 </block>
-<label text="The Blocks Have A Star Isn't Working"></label>
-<block type="parham_embedcreate"/>
+<label text="Embed Blocks:"></label>
+<block type="s4d_create_embed_then">
+  <value name="TITLE">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+  <value name="DESC">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+</block>
+<block type="s4d_create_embed_field">
+  <value name="TITLE">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+  <value name="DESC">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+<value name="INLINE">
+<shadow type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+            </shadow>
+</value>
+</block>
+<block type="s4d_create_embed_send"/>
+<block type="parham_embed"/>
 </category>
 <category name="Commands" colour="#f5ab1a">
 <block type="s4d_on_command">
@@ -594,7 +624,7 @@ ${toolbox_search_category}
 <block type="parham_files_read"/>
 <block type="parham_files_open"/>
 <label text="To Use Bellow Blocks:"></label>
-<label text="You Need Use Open File Then Block"></label>
+<label text="You Need To Using Open File Then Block"></label>
 <block type="parham_files_thenwrite"/>
 <block type="parham_files_thenread"/>
 </category>
@@ -602,7 +632,6 @@ ${toolbox_search_category}
 <block type="parham_securing_code"/>
 <label text="cryptography"></label>
 <block type="parham_securing_cryptgeneratekey"/>
-<block type="parham_securing_cryptkey"/>
 <block type="parham_securing_crypt"/>
 </category>
 <category name="Replit DB" colour="#102770">
