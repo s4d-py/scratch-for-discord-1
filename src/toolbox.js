@@ -512,8 +512,9 @@ ${toolbox_search_category}
 </block>
 <label text="Base block"></label>
 <block type="s4d_on_connected"/>
-<label text="Bot info"></label>
+<label text="Advanced"></label>
 <block type="parham_whencoderuns"/>
+<label text="Bot info"></label>
 </category>
 
 <category name="{{ TOOLBOX_E_MESSAGES }}" colour="#41AAC0">
