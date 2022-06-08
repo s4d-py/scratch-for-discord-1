@@ -35,7 +35,7 @@ Blockly.Python[blockName] = function(block) {
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   var value_key = Blockly.Python.valueToCode(block, 'key', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `Fernet(${value_key}).encrypt(${value_text})`;
+  var code = `Fernet(${value_key}).encrypt(${value_text}.encode("ascii")).decode("ascii")`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };

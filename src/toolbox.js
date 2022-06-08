@@ -516,7 +516,6 @@ ${toolbox_search_category}
 <block type="parham_whencoderuns"/>
 <label text="Bot info"></label>
 </category>
-
 <category name="{{ TOOLBOX_E_MESSAGES }}" colour="#41AAC0">
 <block type="s4d_on_message"/>
 <block type="s4d_message_content"/>
