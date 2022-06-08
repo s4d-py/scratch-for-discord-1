@@ -1,20 +1,19 @@
 import * as Blockly from "blockly";
 
-const blockName = "parham_exec";
+const blockName = "parham_eval";
 
 const blockData = { 
-  "message0": "Exec %1",
+  "message0": "Eval %1",
   "args0": [
     {
       "type": "input_value",
-      "name": "exec",
+      "name": "eval",
       "check": "String"
     }
   ],
-  "previousStatement": null,
-  "nextStatement": null,
+  "output": null,
   "colour": 255,
-  "tooltip": "Exec",
+  "tooltip": "Eval",
   "helpUrl": ""
 };
 
@@ -25,8 +24,9 @@ Blockly.Blocks[blockName] = {
 };
 
 Blockly.Python[blockName] = function(block) {
-  var value_exec = Blockly.Python.valueToCode(block, 'exec', Blockly.Python.ORDER_ATOMIC);
+  var value_eval = Blockly.Python.valueToCode(block, 'eval', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `exec(${value_exec})\n`;
-  return code;
+  var code = `eval(${value_eval})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
 };

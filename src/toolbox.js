@@ -468,8 +468,10 @@ ${toolbox_search_category}
   </value>
 </block>
 <block type="parham_exec"/>
+<block type="parham_eval"/>
 <block type="parham_insertcode"/>
-<block type="parham_no"/>
+<block type="parham_inserttext"/>
+<block type="parham_nocode"/>
 </category>
 <sep class="bt"/>
                     <category name="Favorites" colour="#FFFF00" css-icon="customIcon fa fa-star">

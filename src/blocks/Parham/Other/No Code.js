@@ -1,6 +1,6 @@
 import * as Blockly from "blockly";
 
-const blockName = "parham_no";
+const blockName = "parham_nocode";
 
 const blockData = {
   "type": "blockname",
