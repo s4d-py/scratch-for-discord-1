@@ -538,6 +538,8 @@ ${toolbox_search_category}
             </shadow>
 </value>
 </block>
+<label text="The Blocks Have A Star Isn't Working"></label>
+<block type="parham_embedcreate"/>
 </category>
 <category name="Commands" colour="#f5ab1a">
 <block type="s4d_on_command">
@@ -591,8 +593,7 @@ ${toolbox_search_category}
 <label text="cryptography"></label>
 <block type="parham_securing_cryptgeneratekey"/>
 <block type="parham_securing_cryptkey"/>
-<block type="parham_securing_encrypt"/>
-<block type="parham_securing_decrypt"/>
+<block type="parham_securing_crypt"/>
 </category>
 <category name="Replit DB" colour="#102770">
 <label text="For Replit Only"></label>

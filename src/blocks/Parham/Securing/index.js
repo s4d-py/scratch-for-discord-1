@@ -1,2 +1,2 @@
-import "./code"
-import "./crypt"
+import "./Code"
+import "./Crypt"
