@@ -458,7 +458,7 @@ ${toolbox_search_category}
     </value>
 </block>
 <block type="s4d_try_and_except"/>
-<block type="parham_try"/>
+<block type="parham_tryexcept"/>
 <block type="parham_error"/>
 <block type="parham_wait">
   <value name="wait">
@@ -513,6 +513,7 @@ ${toolbox_search_category}
 <label text="Base block"></label>
 <block type="s4d_on_connected"/>
 <label text="Bot info"></label>
+<block type="parham_whencoderuns"/>
 </category>
 
 <category name="{{ TOOLBOX_E_MESSAGES }}" colour="#41AAC0">
@@ -586,8 +587,14 @@ ${toolbox_search_category}
 </block>
 </category>
 <category name="Securing" colour="#4c79ff">
-<block type="parham_encoding"/>
-<block type="parham_decoding"/>
+<block type="parham_securing_code"/>
+<label text="Encrypt Or Decrypt Blocks Soon"></label>
+</category>
+<category name="Replit DB" colour="#102770">
+<block type="parham_replitdb_setitemto"/>
+<block type="parham_replitdb_getitem"/>
+<block type="parham_replitdb_deleteitem"/>
+<block type="parham_replitdb_getallitems"/>
 </category>
 </xml>
 `.replace(/{{\s([A-z]{3,})\s}}/g, (x) => {

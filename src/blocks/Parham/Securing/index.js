@@ -1,2 +1,1 @@
-import "./encode"
-import "./decode"
+import "./code"

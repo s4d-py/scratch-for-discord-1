@@ -13,7 +13,7 @@ const blockData = {
         }
     ],
     "colour": "#F46580",
-    "tooltip": "%{BKY_LOGIN_TOOLTIP}",
+    "tooltip": "Create A Webserver For Your Repl To Make Your Bot 24/7",
     "helpUrl": ""
 };
 

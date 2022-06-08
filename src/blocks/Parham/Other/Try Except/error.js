@@ -5,7 +5,7 @@ const blockName = "parham_error";
 const blockData = {
   "message0": "Error",
   "output": "String",
-  "colour": 345,
+  "colour": "#D14081",
   "tooltip": "Error",
   "helpUrl": ""
 };

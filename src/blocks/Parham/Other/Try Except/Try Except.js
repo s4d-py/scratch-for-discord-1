@@ -1,13 +1,19 @@
 import * as Blockly from "blockly";
 
-const blockName = "parham_try";
+const blockName = "parham_tryexcept";
 
 const blockData = {
-  "message0": "Try: %1 Except: %2",
+  "message0": "Try %1 : %2 Except %3 : %4",
   "args0": [
+    {
+      "type": "input_dummy"
+    },
     {
       "type": "input_statement",
       "name": "try"
+    },
+    {
+      "type": "input_dummy"
     },
     {
       "type": "input_statement",
@@ -16,7 +22,7 @@ const blockData = {
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 330,
+  "colour": "#D14081",
   "tooltip": "Try Except",
   "helpUrl": ""
 };
