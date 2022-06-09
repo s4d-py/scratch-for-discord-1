@@ -11,7 +11,8 @@ const blockData = {
         },
         {
             "type": "input_statement",
-            "name": "STATEMENTS"
+            "name": "STATEMENTS",
+            "check": "block"
         },
         {
           "type": "input_value",
@@ -24,8 +25,8 @@ const blockData = {
           "check": "String"
         }
     ],
-    "previousStatement": null,
-    "nextStatement": null,
+    "previousStatement": "base",
+    "nextStatement": "base",
 };
 
 Blockly.Blocks[blockName] = {

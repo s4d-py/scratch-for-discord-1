@@ -24,7 +24,8 @@ const blockData = {
         },
         {
             "type": "input_statement",
-            "name": "STATEMENTS"
+            "name": "STATEMENTS",
+            "check": "base"
         }
     ],
     "colour": "#3333ff",
