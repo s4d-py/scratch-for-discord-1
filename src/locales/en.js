@@ -12,7 +12,7 @@ export const websiteMessages = {
     untitled: "Untitled document",
     help: "Help",
     load: {
-        error: "The uploaded file was corrupted and cannot be loaded by Scratch For Discord...",
+        error: "The uploaded file was corrupted and cannot be loaded by Scratch For Discord PY...",
     },
     token:{
         title:"Token Database",
