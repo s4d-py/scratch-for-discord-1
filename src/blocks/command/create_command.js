@@ -43,8 +43,9 @@ Blockly.Python[blockName] = function(block) {
   if(func == undefined || !func.length){
     func = name
   }
+  func = func.slice(1, func.length - 1)
     const code = `@s4dbot.command(name=${name})
-async def ${func}(ctx, *args):
+async def ${func}(s4dmessage, *args):
 ${statements}`;
     return code;
 };

@@ -458,6 +458,13 @@ ${toolbox_search_category}
     </value>
 </block>
 <block type="s4d_try_and_except"/>
+<block type="parham_converttexttonumber">
+  <value name="text">
+    <shadow type="text">
+      <field name="TEXT">1</field>
+    </shadow>
+  </value>
+</block>
 <block type="parham_tryexcept"/>
 <block type="parham_error"/>
 <block type="parham_wait">
@@ -517,11 +524,13 @@ ${toolbox_search_category}
 <block type="s4d_on_connected"/>
 <label text="Advanced"></label>
 <block type="parham_whencoderuns"/>
-<label text="Bot info"></label>
+<label text="Bot Info"></label>
+<block type="parham_botping"/>
 </category>
 <category name="{{ TOOLBOX_E_MESSAGES }}" colour="#41AAC0">
 <block type="s4d_on_message"/>
 <block type="s4d_message_content"/>
+<block type="parham_messageauthor"/>
 <block type="s4d_send">
 <value name="CONTENT">
                     <shadow type="text">
@@ -553,6 +562,11 @@ ${toolbox_search_category}
       <field name="TEXT">Hey!</field>
     </shadow>
   </value>
+  <value name="COLOR">
+    <shadow type="colour_picker">
+      <field name="COLOUR">#ff0000</field>
+    </shadow>
+  </value>
 </block>
 <block type="s4d_create_embed_field">
   <value name="TITLE">
@@ -572,7 +586,31 @@ ${toolbox_search_category}
 </value>
 </block>
 <block type="s4d_create_embed_send"/>
-<block type="parham_embed"/>
+<block type="parham_embed">
+  <value name="title">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+  <value name="description">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+  <value name="color">
+    <shadow type="colour_picker">
+      <field name="COLOUR">#ff0000</field>
+    </shadow>
+  </value>
+</block>
+</category>
+<category name="Channels" colour="#a55b80">
+<block type="s4d_get_channel"/>
+<block type="s4d_channel_exist"/>
+<block type="s4d_send_channel"/>
+</category>
+<category name="Member" colour="#00e3ff">
+<block type="parham_member_bot"/>
 </category>
 <category name="Commands" colour="#f5ab1a">
 <block type="s4d_on_command">
@@ -636,6 +674,7 @@ ${toolbox_search_category}
 <block type="parham_securing_cryptgeneratekey"/>
 <block type="parham_securing_crypt"/>
 </category>
+
 <category name="Replit DB" colour="#102770">
 <label text="For Replit Only"></label>
 <block type="parham_replitdb_setitemto"/>

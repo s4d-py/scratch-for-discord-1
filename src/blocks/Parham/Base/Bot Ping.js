@@ -1,12 +1,12 @@
 import * as Blockly from "blockly";
 
-const blockName = "parham_securing_cryptgeneratekey";
+const blockName = "parham_botping";
 
 const blockData = {
-  "message0": "Generate Key",
-  "output": "key",
-  "colour": 210,
-  "tooltip": "Generate Key For \"cryptography\" & Save Them On DB To Use!",
+  "message0": "Bot Ping",
+  "output": "Number",
+  "colour": 230,
+  "tooltip": "Bot Ping",
   "helpUrl": ""
 };
 
@@ -18,7 +18,7 @@ Blockly.Blocks[blockName] = {
 
 Blockly.Python[blockName] = function() {
   // TODO: Assemble Python into code variable.
-  var code = 'Fernet.generate_key()';
+  var code = 'round(s4dbot.latency * 1000)';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
