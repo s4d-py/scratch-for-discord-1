@@ -672,7 +672,6 @@ ${toolbox_search_category}
 <block type="parham_securing_cryptgeneratekey"/>
 <block type="parham_securing_crypt"/>
 </category>
-
 <category name="Replit DB" colour="#102770">
 <label text="For Replit Only"></label>
 <block type="parham_replitdb_setitemto"/>
