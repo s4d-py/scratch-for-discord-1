@@ -663,8 +663,6 @@ ${toolbox_search_category}
 <block type="parham_files_write"/>
 <block type="parham_files_read"/>
 <block type="parham_files_open"/>
-<label text="To Use Bellow Blocks:"></label>
-<label text="You Need To Using Open File Then Block"></label>
 <block type="parham_files_thenwrite"/>
 <block type="parham_files_thenread"/>
 </category>

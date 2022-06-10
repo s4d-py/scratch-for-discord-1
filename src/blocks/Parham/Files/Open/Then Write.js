@@ -1,4 +1,5 @@
 import * as Blockly from "blockly";
+import { registerRestrictions } from "../../../../restrictions";
 
 const blockName = "parham_files_thenwrite";
 
@@ -30,3 +31,13 @@ Blockly.Python[blockName] = function(block) {
   var code = `file.write(${value_text})\n`;
   return code;
 };
+
+registerRestrictions(blockName, [
+    {
+        type: "hasparent",
+        message: "RES_FILES_OPEN",
+        types: [
+            "parham_files_open"
+        ]
+    }
+]);

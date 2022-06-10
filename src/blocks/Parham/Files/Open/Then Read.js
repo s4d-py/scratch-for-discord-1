@@ -1,4 +1,5 @@
 import * as Blockly from "blockly";
+import { registerRestrictions } from "../../../../restrictions";
 
 const blockName = "parham_files_thenread";
 
@@ -22,3 +23,13 @@ Blockly.Python[blockName] = function() {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
+
+registerRestrictions(blockName, [
+    {
+        type: "hasparent",
+        message: "RES_FILES_OPEN",
+        types: [
+            "parham_files_open"
+        ]
+    }
+]);

@@ -31,7 +31,9 @@ export const disableUnapplicable = (workspace) => {
         for (let restriction of restrictions[block.type]) {
             if (!validateConfiguration(block, restriction)) continue;
             if (!(Blockly.Msg[restriction.message])) {
-                if (restriction.message == "RES_MISSING_AHQ_CONTENT") {
+                if (restriction.message == "RES_FILES_OPEN") {
+                    Blockly.Msg[restriction.message] = "You Should Put This Block On Files Open Block"
+                } else if (restriction.message == "RES_MISSING_AHQ_CONTENT") {
                     Blockly.Msg[restriction.message] = "All the blocks should be filled!"
                 } else if (restriction.message == "RES_MISSING_AHQ_SUPER_CONTENT") {
                     Blockly.Msg[restriction.message] = "You should place it in the block \"Make a convert task\""
