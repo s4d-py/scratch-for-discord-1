@@ -1,9 +1,8 @@
 import * as Blockly from "blockly";
 
-const blockName = "parham_nocode";
+const blockName = "parham_other_nocode";
 
 const blockData = {
-  "type": "blockname",
   "message0": "No Code %1 : %2",
   "args0": [
     {
@@ -11,7 +10,7 @@ const blockData = {
     },
     {
       "type": "input_statement",
-      "name": "no"
+      "name": "code"
     }
   ],
   "previousStatement": null,

@@ -478,7 +478,7 @@ ${toolbox_search_category}
 <block type="parham_eval"/>
 <block type="parham_insertcode"/>
 <block type="parham_inserttext"/>
-<block type="parham_nocode"/>
+<block type="parham_other_nocode"/>
 </category>
 <sep class="bt"/>
                     <category name="Favorites" colour="#FFFF00" css-icon="customIcon fa fa-star">
