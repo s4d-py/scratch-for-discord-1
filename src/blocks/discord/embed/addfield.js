@@ -42,6 +42,6 @@ Blockly.Python[blockName] = function(block){
     let title = Blockly.Python.valueToCode(block, 'TITLE', Blockly.Python.ORDER_ATOMIC);
     let desc = Blockly.Python.valueToCode(block, 'DESC', Blockly.Python.ORDER_ATOMIC);
   let inline = Blockly.Python.valueToCode(block, 'INLINE', Blockly.Python.ORDER_ATOMIC);
-    const code = `embedVar.add_field(name="${title}", value="${desc}", inline=${inline})\n`;
+    const code = `embedVar.add_field(name=${title}, value=${desc}, inline=${inline})\n`;
     return code;
 };

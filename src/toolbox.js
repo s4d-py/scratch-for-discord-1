@@ -585,6 +585,32 @@ ${toolbox_search_category}
             </shadow>
 </value>
 </block>
+<block type="s4d_create_embed_author">
+  <value name="NAME">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+  <value name="IMAGE">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+</block>
+<block type="s4d_create_embed_thumbnail">
+  <value name="IMAGE">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+</block>
+<block type="s4d_create_embed_footer">
+  <value name="TEXT">
+    <shadow type="text">
+      <field name="TEXT">Hey!</field>
+    </shadow>
+  </value>
+</block>
 <block type="s4d_create_embed_send"/>
 <block type="parham_embed">
   <value name="title">

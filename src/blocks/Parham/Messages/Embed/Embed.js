@@ -39,12 +39,12 @@ Blockly.Blocks[blockName] = {
 Blockly.Python[blockName] = function(block) {
   var value_title = Blockly.Python.valueToCode(block, 'title', Blockly.Python.ORDER_ATOMIC);
   var value_description = Blockly.Python.valueToCode(block, 'description', Blockly.Python.ORDER_ATOMIC);
-  //let value_color = Blockly.Python.valueToCode(block, 'color', Blockly.Python.ORDER_ATOMIC);
+  let value_color = Blockly.Python.valueToCode(block, 'color', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  /*if (!value_color.startsWith(("'") || ('"'))) {
-        value_color = textReplace('#', '0x', value_color.slice(1, value_color.length - 1))
-      }*/
-  var code = `embed=disnake.Embed(title=${value_title}, description=${value_description}, color=None`/*${value_color})`*/;
+  if (value_color.startsWith("'"||'"')) {
+        value_color = value_color.slice(1, value_color.length - 1).replace(/#/g, "0x");
+      }
+  var code = `embed=disnake.Embed(title=${value_title}, description=${value_description}, color=${value_color}`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

@@ -46,17 +46,17 @@ Blockly.Python[blockName] = function(block) {
   const guilds = Blockly.Python.valueToCode(block, "GUILDS", Blockly.Python.ORDER_ATOMIC);
   const prefix = Blockly.Python.valueToCode(block, "PREFIX", Blockly.Python.ORDER_ATOMIC);
     const statements = Blockly.Python.statementToCode(block, "STATEMENTS");
-  if(((prefix == null)||(prefix == undefined)) || !prefix.length) {
-    if(((guilds == null)||(guilds == undefined)) || !guilds.length) {
-    extra = `intents=intents`
+  if(!(prefix == null) && prefix.length) {
+    if(!(guilds == null) && guilds.length) {
+    extra = `intents=intents, command_prefix=${prefix}, test_guilds=${guilds}`
     } else {
-      extra = `intents=intents, test_guilds=${guilds}`
+      extra = `intents=intents, command_prefix=${prefix}`
     }
   } else {
-    if(((guilds == null)||(guilds == undefined)) || !guilds.length) {
-    extra = `intents=intents, command_prefix=${prefix}`
+    if(!(guilds == null) && guilds.length) {
+    extra = `intents=intents, test_guilds=${guilds}`
     } else {
-      extra = `intents=intents, command_prefix=${prefix}, test_guilds=${guilds}`
+      extra = `intents=intents`
     }
   }
     const code = `\ndef Run_bot():

@@ -1,3 +1,6 @@
 import "./create"
 import "./addfield"
+import "./addauthor"
+import "./addthumbnail"
+import "./addfooter"
 import "./send"

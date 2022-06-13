@@ -138,11 +138,11 @@ ${requires.join("\n")}`)
       if (localStorage.getItem("theme") === "dark") {
         localStorage.setItem("theme", "light");
         document.querySelector("html").classList.add("light-them");
-        console.log("changed theme to light");
+        console.log("The darkness has been banished to the beforelands");
       } else {
         localStorage.setItem("theme", "dark");
         document.querySelector("html").classList.remove("light-them");
-        console.log("changed theme to dark");
+        console.log("The darkness has taken over the light");
       }
     },
     }
