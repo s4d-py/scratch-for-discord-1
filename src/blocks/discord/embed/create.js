@@ -47,7 +47,7 @@ Blockly.Python[blockName] = function(block){
     let title = Blockly.Python.valueToCode(block, 'TITLE', Blockly.Python.ORDER_ATOMIC);
     let desc = Blockly.Python.valueToCode(block, 'DESC', Blockly.Python.ORDER_ATOMIC);
   let color = Blockly.Python.valueToCode(block, 'COLOR', Blockly.Python.ORDER_ATOMIC);
-    const code = `embedVar = disnake.Embed(title="${title}", description="${desc}", color=${color}) \n ${statementThen}\n`;
+    const code = `embedVar = disnake.Embed(title="${title}", description="${desc}", color=${color})\n${statementThen}\n`;
     return code;
 };
 
