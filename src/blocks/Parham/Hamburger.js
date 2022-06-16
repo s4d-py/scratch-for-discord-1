@@ -3,11 +3,11 @@ import * as Blockly from "blockly";
 const blockName = "parham_hamburger";
 
 const blockData = {
-  "message0": "Hamburger",
+  "message0": "Hamburger 🍔",
   "previousStatement": null,
   "nextStatement": null,
   "colour": 45,
-  "tooltip": "",
+  "tooltip": "Hamburger 🍔",
   "helpUrl": ""
 };
 
