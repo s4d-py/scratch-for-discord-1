@@ -530,7 +530,7 @@ ${toolbox_search_category}
 <category name="{{ TOOLBOX_E_MESSAGES }}" colour="#41AAC0">
 <block type="s4d_on_message"/>
 <block type="s4d_message_content"/>
-<block type="parham_messageauthor"/>
+<block type="parham_messages_author"/>
 <block type="s4d_send">
 <value name="CONTENT">
                     <shadow type="text">
@@ -612,7 +612,7 @@ ${toolbox_search_category}
   </value>
 </block>
 <block type="s4d_create_embed_send"/>
-<block type="parham_embed">
+<block type="parham_messages_embed">
   <value name="title">
     <shadow type="text">
       <field name="TEXT">Hey!</field>
@@ -704,6 +704,11 @@ ${toolbox_search_category}
 <block type="parham_replitdb_getitem"/>
 <block type="parham_replitdb_deleteitem"/>
 <block type="parham_replitdb_getallitems"/>
+</category>
+<category name="Parham" colour="#ff4800">
+<label text="This Blocks Remove Soon..."></label>
+<label text="🍔"></label>
+<block type="parham_hamburger"/>
 </category>
 </xml>
 `.replace(/{{\s([A-z]{3,})\s}}/g, (x) => {

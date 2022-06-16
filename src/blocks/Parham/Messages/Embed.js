@@ -1,6 +1,6 @@
 import * as Blockly from "blockly";
 
-const blockName = "parham_embed";
+const blockName = "parham_messages_embed";
 
 const blockData = {
   "message0": "Make Embed %1 Title %2 Description %3 Color %4",

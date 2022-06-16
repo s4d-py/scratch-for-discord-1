@@ -1,6 +1,6 @@
 import * as Blockly from "blockly";
 
-const blockName = "parham_messageauthor";
+const blockName = "parham_messages_author";
 
 const blockData = {
   "message0": "Message Author",

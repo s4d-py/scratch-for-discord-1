@@ -27,7 +27,7 @@ Blockly.Python[blockName] = function() {
 registerRestrictions(blockName, [
     {
         type: "hasparent",
-        message: "RES_FILES_OPEN",
+        message: "RES_FILES_OPEN_THEN",
         types: [
             "parham_files_open"
         ]

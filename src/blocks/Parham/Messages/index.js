@@ -1,2 +1,2 @@
-import "./Message Author"
+import "./Author"
 import "./Embed"
