@@ -29,5 +29,5 @@ Blockly.Python[blockName] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = `del replit.db[${value_delete}]`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return code;
 };
