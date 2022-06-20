@@ -706,7 +706,7 @@ ${toolbox_search_category}
 <block type="parham_replitdb_getallitems"/>
 </category>
 <category name="Parham" colour="#ff4800">
-<label text="This Blocks Remove Soon..."></label>
+<label text="This Category Remove Soon... "></label>
 <label text="🍔"></label>
 <block type="parham_hamburger"/>
 </category>
