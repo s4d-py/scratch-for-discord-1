@@ -706,9 +706,9 @@ ${toolbox_search_category}
 <block type="parham_replitdb_getallitems"/>
 </category>
 <category name="Parham" colour="#ff4800">
-<label text="This Category Remove Soon... "></label>
-<label text="🍔"></label>
 <block type="parham_hamburger"/>
+<label text="Hmm, Nothing more can be found here"></label>
+<label text="This Category gets removed soon..."></label>
 </category>
 </xml>
 `.replace(/{{\s([A-z]{3,})\s}}/g, (x) => {
