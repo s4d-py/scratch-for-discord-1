@@ -27,6 +27,7 @@ Blockly.Blocks[blockName] = {
 Blockly.Python[blockName] = function(block) {
   var statements_whencoderuns = Blockly.Python.statementToCode(block, 'whencoderuns');
   // TODO: Assemble Python into code variable.
-  var code = `${statements_whencoderuns}\n`;
+  var code = `if True:
+${statements_whencoderuns}\n`;
   return code;
 };
