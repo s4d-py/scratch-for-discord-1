@@ -13,6 +13,7 @@
 import Blockly from "blockly";
 
 import PingPongExample from "../../examples/ping-pong";
+import localforage from 'localforage';
 
 const examples = {
     "ping-pong": PingPongExample,
